@@ -43,7 +43,7 @@ const Home = () => {
 						</NavLink>
 					</div>
 					<NavLink
-						to='/'
+						to='/payment'
 						className='flex w-[40%] items-center relative overflow-hidden justify-center money p-[20px] h-[210px] bg-white text-black text-[18px] rounded-[15px]'
 					>
 						<span className='absolute top-[20%] left-[10%] text-[24px] font-bold w-[100px] text-green-500 leading-[20px]'>

@@ -20,7 +20,7 @@ export const Header = () => {
 						</div>
 					</div>
 					<a
-						href='/'
+						href='https://logschool.ru/'
 						className='flex items-center gap-[10px] px-[10px] py-[5px] blur-effect'
 					>
 						<AiOutlineGlobal className='w-[30px] h-[30px]' />
