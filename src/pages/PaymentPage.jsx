@@ -106,21 +106,21 @@ const PaymentPage = () => {
 						placeholder='Выберите язык'
 						prefix={<GlobalOutlined />}
 					>
-						<Option value='ru'>Русский язык</Option>
-						<Option value='en'>Английский язык</Option>
-						<Option value='math'>Математика</Option>
-						<Option value='socialStudies'>Обществознание</Option>
-						<Option value='physics'>Физика</Option>
-						<Option value='chemistry'>Химия</Option>
-						<Option value='biology'>Биология</Option>
-						<Option value='literature'>Литература</Option>
-						<Option value='informatics'>Информатика</Option>
-						<Option value='geography'>География</Option>
-						<Option value='history'>История</Option>
-						<Option value='chinese'>Китайский язык</Option>
-						<Option value='german'>Немецкий язык</Option>
-						<Option value='french'>Французский язык</Option>
-						<Option value='spanish'>Испанский язык</Option>
+						<Option value='Русский язык'>Русский язык</Option>
+						<Option value='Английский язык'>Английский язык</Option>
+						<Option value='Математика'>Математика</Option>
+						<Option value='Обществознание'>Обществознание</Option>
+						<Option value='Физика'>Физика</Option>
+						<Option value='Химия'>Химия</Option>
+						<Option value='Биология'>Биология</Option>
+						<Option value='Литература'>Литература</Option>
+						<Option value='Информатика'>Информатика</Option>
+						<Option value='География'>География</Option>
+						<Option value='История'>История</Option>
+						<Option value='Китайский язык'>Китайский язык</Option>
+						<Option value='Немецкий язык'>Немецкий язык</Option>
+						<Option value='Французский язык'>Французский язык</Option>
+						<Option value='Испанский язык'>Испанский язык</Option>
 					</Select>
 				</Form.Item>
 
@@ -134,9 +134,9 @@ const PaymentPage = () => {
 						placeholder='Выберите тариф'
 						prefix={<DollarOutlined />}
 					>
-						<Option value='basic'>ОГЭ-Эффективный</Option>
-						<Option value='standard'>ЕГЭ-Интенсив</Option>
-						<Option value='premium'>VIP тариф`</Option>
+						<Option value='ОГЭ-Эффективный'>ОГЭ-Эффективный</Option>
+						<Option value='ЕГЭ-Интенсив'>ЕГЭ-Интенсив</Option>
+						<Option value='VIP тариф'>VIP тариф</Option>
 					</Select>
 				</Form.Item>
 
