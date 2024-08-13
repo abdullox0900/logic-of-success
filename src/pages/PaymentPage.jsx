@@ -13,6 +13,7 @@ const { Option } = Select
 const PaymentPage = () => {
 	const [form] = Form.useForm()
 	const [loading, setLoading] = useState(false)
+	const [newError, setNewError] = useState()
 
 	const onFinish = async values => {
 		setLoading(true)
@@ -36,6 +37,7 @@ const PaymentPage = () => {
 			})
 			form.resetFields()
 		} catch (err) {
+			setNewError(err)
 			console.error('Ошибка:', err)
 			notification.error({
 				message: 'Ошибка',
@@ -52,7 +54,7 @@ const PaymentPage = () => {
 	return (
 		<div>
 			<h4 className='text-center my-[30px] text-[28px] font-semibold'>
-				Оплата
+				Оплата {newError}
 			</h4>
 			<Form
 				form={form}
