@@ -5,7 +5,6 @@ import {
 	UserOutlined,
 } from '@ant-design/icons'
 import { Button, Form, Input, notification, Select } from 'antd'
-import axios from 'axios'
 import { useState } from 'react'
 
 const { Option } = Select
@@ -13,23 +12,30 @@ const { Option } = Select
 const PaymentPage = () => {
 	const [form] = Form.useForm()
 	const [loading, setLoading] = useState(false)
-	const [newError, setNewError] = useState()
 
 	const onFinish = async values => {
 		setLoading(true)
 
 		try {
-			const response = await axios.post(
-				'http://localhost:3000/send-to-telegram',
-				{
+			const response = await fetch('http://localhost:3000/send-to-telegram', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
 					name: values.name,
 					phone: values.phoneNumber,
 					tariff: values.tariff,
 					lang: values.language,
-				}
-			)
+				}),
+			})
 
-			console.log('Ответ:', response.data)
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`)
+			}
+
+			const data = await response.json()
+			console.log('Ответ:', data)
 			notification.success({
 				message: 'Успех',
 				description: 'Ваши данные успешно отправлены в Telegram!',
@@ -37,13 +43,10 @@ const PaymentPage = () => {
 			})
 			form.resetFields()
 		} catch (err) {
-			setNewError(err)
 			console.error('Ошибка:', err)
 			notification.error({
 				message: 'Ошибка',
-				description:
-					'Произошла ошибка при отправке данных. Пожалуйста, попробуйте еще раз.' +
-					err,
+				description: `Произошла ошибка при отправке данных: ${err.message}. Пожалуйста, попробуйте еще раз.`,
 				duration: 5,
 			})
 		} finally {
@@ -54,7 +57,7 @@ const PaymentPage = () => {
 	return (
 		<div>
 			<h4 className='text-center my-[30px] text-[28px] font-semibold'>
-				Оплата {newError}
+				Оплата
 			</h4>
 			<Form
 				form={form}
