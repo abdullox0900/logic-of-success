@@ -11,7 +11,7 @@ const Home = () => {
 		<div>
 			<Header />
 			<Container>
-				<h1 className='pt-[100px] pb-[50px] text-[35px] relative z-[10] text-center font-semibold'>
+				<h1 className='pt-[50px] pb-[30px] text-[30px] relative z-[10] text-center font-semibold'>
 					Добро пожаловать в Логику Успеха! 🙂
 				</h1>
 
