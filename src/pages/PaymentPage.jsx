@@ -2,10 +2,9 @@ import {
 	DollarOutlined,
 	GlobalOutlined,
 	PhoneOutlined,
-	UploadOutlined,
 	UserOutlined,
 } from '@ant-design/icons'
-import { Button, Form, Input, Select, Upload, message } from 'antd'
+import { Button, Form, Input, notification, Select } from 'antd'
 import axios from 'axios'
 import { useState } from 'react'
 
@@ -17,33 +16,39 @@ const PaymentPage = () => {
 
 	const onFinish = async values => {
 		setLoading(true)
-		try {
-			const formData = new FormData()
-			for (const name in values) {
-				if (name === 'image') {
-					formData.append(name, values.image[0].originFileObj)
-				} else {
-					formData.append(name, values[name])
-				}
-			}
+		console.log({
+			name: values.name,
+			phone: values.phoneNumber,
+			tariff: values.tariff,
+			lang: values.language,
+		})
 
-			// Замените URL на ваш реальный API endpoint
+		try {
 			const response = await axios.post(
-				'https://api.example.com/register',
-				formData,
+				'http://localhost:3000/send-to-telegram',
 				{
-					headers: {
-						'Content-Type': 'multipart/form-data',
-					},
+					name: values.name,
+					phone: values.phoneNumber,
+					tariff: values.tariff,
+					lang: values.language,
 				}
 			)
 
 			console.log('Ответ:', response.data)
-			message.success('Данные успешно отправлены!')
+			notification.success({
+				message: 'Успех',
+				description: 'Ваши данные успешно отправлены в Telegram!',
+				duration: 5,
+			})
 			form.resetFields()
 		} catch (err) {
 			console.error('Ошибка:', err)
-			message.error('Произошла ошибка. Пожалуйста, попробуйте еще раз.')
+			notification.error({
+				message: 'Ошибка',
+				description:
+					'Произошла ошибка при отправке данных. Пожалуйста, попробуйте еще раз.',
+				duration: 5,
+			})
 		} finally {
 			setLoading(false)
 		}
@@ -101,9 +106,21 @@ const PaymentPage = () => {
 						placeholder='Выберите язык'
 						prefix={<GlobalOutlined />}
 					>
-						<Option value='ru'>Русский</Option>
-						<Option value='uz'>Узбекский</Option>
-						<Option value='en'>Английский</Option>
+						<Option value='ru'>Русский язык</Option>
+						<Option value='en'>Английский язык</Option>
+						<Option value='math'>Математика</Option>
+						<Option value='socialStudies'>Обществознание</Option>
+						<Option value='physics'>Физика</Option>
+						<Option value='chemistry'>Химия</Option>
+						<Option value='biology'>Биология</Option>
+						<Option value='literature'>Литература</Option>
+						<Option value='informatics'>Информатика</Option>
+						<Option value='geography'>География</Option>
+						<Option value='history'>История</Option>
+						<Option value='chinese'>Китайский язык</Option>
+						<Option value='german'>Немецкий язык</Option>
+						<Option value='french'>Французский язык</Option>
+						<Option value='spanish'>Испанский язык</Option>
 					</Select>
 				</Form.Item>
 
@@ -117,32 +134,10 @@ const PaymentPage = () => {
 						placeholder='Выберите тариф'
 						prefix={<DollarOutlined />}
 					>
-						<Option value='basic'>Базовый</Option>
-						<Option value='standard'>Стандартный</Option>
-						<Option value='premium'>Премиум</Option>
+						<Option value='basic'>ОГЭ-Эффективный</Option>
+						<Option value='standard'>ЕГЭ-Интенсив</Option>
+						<Option value='premium'>VIP тариф`</Option>
 					</Select>
-				</Form.Item>
-
-				<Form.Item
-					name='image'
-					label='Изображение'
-					valuePropName='fileList'
-					getValueFromEvent={e => {
-						if (Array.isArray(e)) {
-							return e
-						}
-						return e && e.fileList
-					}}
-				>
-					<Upload
-						name='image'
-						listType='picture'
-						maxCount={1}
-						style={{ width: '100%', height: '55px' }}
-						beforeUpload={() => false}
-					>
-						<Button icon={<UploadOutlined />}>Выберите изображение</Button>
-					</Upload>
 				</Form.Item>
 
 				<Form.Item>
