@@ -16,12 +16,6 @@ const PaymentPage = () => {
 
 	const onFinish = async values => {
 		setLoading(true)
-		console.log({
-			name: values.name,
-			phone: values.phoneNumber,
-			tariff: values.tariff,
-			lang: values.language,
-		})
 
 		try {
 			const response = await axios.post(
@@ -46,7 +40,8 @@ const PaymentPage = () => {
 			notification.error({
 				message: 'Ошибка',
 				description:
-					'Произошла ошибка при отправке данных. Пожалуйста, попробуйте еще раз.',
+					'Произошла ошибка при отправке данных. Пожалуйста, попробуйте еще раз.' +
+					err,
 				duration: 5,
 			})
 		} finally {
