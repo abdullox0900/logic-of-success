@@ -88,8 +88,8 @@ const PaymentPage = () => {
 				onFinish={onFinish}
 				layout='vertical'
 				className={`${
-					isDarkMode ? 'bg-[#999999]' : ''
-				} relative z-[10] bg-white px-[10px] py-[30px] rounded-[25px]`}
+					isDarkMode ? 'bg-[#808080]' : 'bg-white'
+				} relative z-[10] px-[10px] py-[30px] rounded-[25px]`}
 			>
 				<Form.Item
 					name='name'
