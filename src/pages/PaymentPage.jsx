@@ -87,14 +87,11 @@ const PaymentPage = () => {
 				name='payment'
 				onFinish={onFinish}
 				layout='vertical'
-				className={`${
-					isDarkMode ? 'bg-[#1c1c1e]' : 'bg-white'
-				} relative z-[10] px-[10px] py-[30px] rounded-[25px]`}
+				className={`relative bg-white z-[10] px-[10px] py-[30px] rounded-[25px]`}
 			>
 				<Form.Item
 					name='name'
 					label='Имя'
-					style={isDarkMode ? { color: 'white' } : { color: 'black' }}
 					rules={[{ required: true, message: 'Пожалуйста, введите ваше имя!' }]}
 				>
 					<Input
@@ -107,7 +104,6 @@ const PaymentPage = () => {
 				<Form.Item
 					name='phoneNumber'
 					label='Номер телефона'
-					className={`${isDarkMode ? 'text-white' : 'text-black'}`}
 					rules={[
 						{ required: true, message: 'Пожалуйста, введите номер телефона!' },
 						{
@@ -126,7 +122,6 @@ const PaymentPage = () => {
 				<Form.Item
 					name='language'
 					label='Язык'
-					className={`${isDarkMode ? 'text-white' : 'text-black'}`}
 					rules={[{ required: true, message: 'Пожалуйста, выберите язык!' }]}
 				>
 					<Select
