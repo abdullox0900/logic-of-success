@@ -9,7 +9,7 @@ function App() {
 	const { isDarkMode } = useTelegramColorScheme()
 
 	if (isDarkMode) {
-		document.body.style.backgroundColor = '#2f2f2f'
+		document.body.style.backgroundColor = '#000'
 	} else {
 		document.body.style.backgroundColor = '#fff'
 	}

@@ -77,8 +77,8 @@ const PaymentPage = () => {
 		<div>
 			<h4
 				className={`${
-					isDarkMode ? '#fff' : ''
-				} text-center my-[30px] text-[28px] font-semibold`}
+					isDarkMode ? '#fff' : '#000'
+				} relative z-[10] text-center my-[30px] text-[28px] font-semibold`}
 			>
 				Оплата
 			</h4>
