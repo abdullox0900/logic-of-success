@@ -5,13 +5,15 @@ import {
 	UserOutlined,
 } from '@ant-design/icons'
 import { Button, Form, Input, notification, Select } from 'antd'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const { Option } = Select
 
 const PaymentPage = () => {
 	const [form] = Form.useForm()
 	const [loading, setLoading] = useState(false)
+	const navigate = useNavigate()
 
 	const onFinish = async values => {
 		setLoading(true)
@@ -53,6 +55,20 @@ const PaymentPage = () => {
 			setLoading(false)
 		}
 	}
+
+	useEffect(() => {
+		const tg = window.Telegram.WebApp
+
+		tg.BackButton.show()
+
+		tg.BackButton.onClick(() => {
+			navigate(-1)
+		})
+
+		return () => {
+			tg.BackButton.hide()
+		}
+	}, [])
 
 	return (
 		<div>
