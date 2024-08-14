@@ -26,7 +26,9 @@ const Home = () => {
 					<div className='flex flex-col gap-[10px] w-[60%]'>
 						<NavLink
 							to='/tariffs'
-							className='flex relative overflow-hidden items-center p-[20px] h-[100px] bg-white text-black text-[18px] rounded-[15px]'
+							className={`${
+								isDarkMode ? 'bg-[#1c1c1e] text-white' : 'bg-white text-black'
+							} flex relative overflow-hidden items-center p-[20px] h-[100px] text-[18px] rounded-[15px]`}
 						>
 							<span className='font-bold w-[150px]'>
 								Ознакомление с тарифами
@@ -39,7 +41,9 @@ const Home = () => {
 						</NavLink>
 						<NavLink
 							to='/tariffs'
-							className='flex items-center relative overflow-hidden p-[20px] w-full h-[100px] bg-white text-black text-[18px] rounded-[15px]'
+							className={`${
+								isDarkMode ? 'bg-[#1c1c1e] text-white' : 'bg-white text-black'
+							} flex items-center relative overflow-hidden p-[20px] w-full h-[100px] text-[18px] rounded-[15px]`}
 						>
 							<span className='font-bold w-[150px]'>Отзывы</span>
 							<img
@@ -51,7 +55,9 @@ const Home = () => {
 					</div>
 					<NavLink
 						to='/payment'
-						className='flex w-[40%] items-center relative overflow-hidden justify-center money p-[20px] h-[210px] bg-white text-black text-[18px] rounded-[15px]'
+						className={`${
+							isDarkMode ? 'bg-[#1c1c1e] text-white' : 'bg-white text-black'
+						} flex w-[40%] items-center relative overflow-hidden justify-center money p-[20px] h-[210px] text-[18px] rounded-[15px]`}
 					>
 						<span className='absolute top-[20%] left-[10%] text-[24px] font-bold w-[100px] text-green-500 leading-[20px]'>
 							Оплата <br />

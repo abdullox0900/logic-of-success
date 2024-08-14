@@ -94,12 +94,11 @@ const PaymentPage = () => {
 				<Form.Item
 					name='name'
 					label='Имя'
+					className={`${isDarkMode ? 'text-white' : 'text-black'}`}
 					rules={[{ required: true, message: 'Пожалуйста, введите ваше имя!' }]}
 				>
 					<Input
-						className={`${
-							isDarkMode ? 'bg-[#000] placeholder:text-[#898989]' : ''
-						} h-[55px]`}
+						className='h-[55px]'
 						prefix={<UserOutlined />}
 						placeholder='Ваше имя'
 					/>
@@ -108,6 +107,7 @@ const PaymentPage = () => {
 				<Form.Item
 					name='phoneNumber'
 					label='Номер телефона'
+					className={`${isDarkMode ? 'text-white' : 'text-black'}`}
 					rules={[
 						{ required: true, message: 'Пожалуйста, введите номер телефона!' },
 						{
@@ -126,6 +126,7 @@ const PaymentPage = () => {
 				<Form.Item
 					name='language'
 					label='Язык'
+					className={`${isDarkMode ? 'text-white' : 'text-black'}`}
 					rules={[{ required: true, message: 'Пожалуйста, выберите язык!' }]}
 				>
 					<Select
@@ -153,6 +154,7 @@ const PaymentPage = () => {
 
 				<Form.Item
 					name='tariff'
+					className={`${isDarkMode ? 'text-white' : 'text-black'}`}
 					label='Тариф'
 					rules={[{ required: true, message: 'Пожалуйста, выберите тариф!' }]}
 				>
