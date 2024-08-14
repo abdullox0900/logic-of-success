@@ -16,7 +16,7 @@ const PaymentPage = () => {
 	const [loading, setLoading] = useState(false)
 	const navigate = useNavigate()
 
-	const [isDarkMode] = useTelegramColorScheme()
+	const { isDarkMode } = useTelegramColorScheme()
 
 	const onFinish = async values => {
 		setLoading(true)

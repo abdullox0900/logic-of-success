@@ -6,7 +6,7 @@ import Tariffs from './pages/Tariffs'
 import './styles/App.scss'
 
 function App() {
-	const [isDarkMode] = useTelegramColorScheme()
+	const { isDarkMode } = useTelegramColorScheme()
 
 	if (isDarkMode) {
 		document.body.style.backgroundColor = '#2f2f2f'
