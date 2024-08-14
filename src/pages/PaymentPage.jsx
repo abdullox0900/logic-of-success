@@ -77,7 +77,7 @@ const PaymentPage = () => {
 		<div>
 			<h4
 				className={`${
-					isDarkMode ? '#fff' : '#000'
+					isDarkMode ? 'text-[#fff]' : 'text-[#000]'
 				} relative z-[10] text-center my-[30px] text-[28px] font-semibold`}
 			>
 				Оплата
@@ -88,7 +88,7 @@ const PaymentPage = () => {
 				onFinish={onFinish}
 				layout='vertical'
 				className={`${
-					isDarkMode ? '#999999' : ''
+					isDarkMode ? 'bg-[#999999]' : ''
 				} relative z-[10] bg-white px-[10px] py-[30px] rounded-[25px]`}
 			>
 				<Form.Item
