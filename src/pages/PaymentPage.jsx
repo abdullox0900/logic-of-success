@@ -94,7 +94,7 @@ const PaymentPage = () => {
 				<Form.Item
 					name='name'
 					label='Имя'
-					style={`${isDarkMode ? { color: 'white' } : { color: 'black' }}`}
+					style={isDarkMode ? { color: 'white' } : { color: 'black' }}
 					rules={[{ required: true, message: 'Пожалуйста, введите ваше имя!' }]}
 				>
 					<Input
