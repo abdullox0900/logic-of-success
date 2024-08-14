@@ -1,17 +1,24 @@
 import { NavLink } from 'react-router-dom'
-import Container from '../components/Container/Container'
-import { Header } from '../components/Header/Header'
 import ImgMoney from '../assets/img/dollar-money.png'
-import ImgWorking from '../assets/img/working.png'
 import ImgIsometric from '../assets/img/isometric.png'
+import ImgWorking from '../assets/img/working.png'
+import Container from '../components/Container/Container'
 import Footer from '../components/Footer/Footer'
+import { Header } from '../components/Header/Header'
+import { useTelegramColorScheme } from '../context/TelegramColorSchemeContext'
 
 const Home = () => {
+	const { isDarkMode } = useTelegramColorScheme()
+
 	return (
 		<div>
 			<Header />
 			<Container>
-				<h1 className='pt-[50px] pb-[30px] text-[30px] relative z-[10] text-center font-semibold'>
+				<h1
+					className={`${
+						isDarkMode ? 'text-white' : 'text-black'
+					} pt-[50px] pb-[30px] text-[30px] relative z-[10] text-center font-semibold`}
+				>
 					Добро пожаловать в Логику Успеха! 🙂
 				</h1>
 

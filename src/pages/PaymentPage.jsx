@@ -88,7 +88,7 @@ const PaymentPage = () => {
 				onFinish={onFinish}
 				layout='vertical'
 				className={`${
-					isDarkMode ? 'bg-[#808080]' : 'bg-white'
+					isDarkMode ? 'bg-[#1c1c1e]' : 'bg-white'
 				} relative z-[10] px-[10px] py-[30px] rounded-[25px]`}
 			>
 				<Form.Item
@@ -97,7 +97,9 @@ const PaymentPage = () => {
 					rules={[{ required: true, message: 'Пожалуйста, введите ваше имя!' }]}
 				>
 					<Input
-						className='h-[55px]'
+						className={`${
+							isDarkMode ? 'bg-[#000] placeholder:text-[#898989]' : ''
+						} h-[55px]`}
 						prefix={<UserOutlined />}
 						placeholder='Ваше имя'
 					/>
