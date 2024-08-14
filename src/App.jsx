@@ -1,10 +1,19 @@
 import { Route, Routes } from 'react-router-dom'
+import { useTelegramColorScheme } from './context/TelegramColorSchemeContext'
 import Home from './pages/Home'
 import PaymentPage from './pages/PaymentPage'
 import Tariffs from './pages/Tariffs'
 import './styles/App.scss'
 
 function App() {
+	const [isDarkMode] = useTelegramColorScheme()
+
+	if (isDarkMode) {
+		document.body.style.backgroundColor = '#2f2f2f'
+	} else {
+		document.body.style.backgroundColor = '#fff'
+	}
+
 	return (
 		<>
 			<Routes>

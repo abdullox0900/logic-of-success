@@ -7,6 +7,7 @@ import {
 import { Button, Form, Input, notification, Select } from 'antd'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTelegramColorScheme } from '../context/TelegramColorSchemeContext'
 
 const { Option } = Select
 
@@ -14,6 +15,8 @@ const PaymentPage = () => {
 	const [form] = Form.useForm()
 	const [loading, setLoading] = useState(false)
 	const navigate = useNavigate()
+
+	const [isDarkMode] = useTelegramColorScheme()
 
 	const onFinish = async values => {
 		setLoading(true)
@@ -72,7 +75,11 @@ const PaymentPage = () => {
 
 	return (
 		<div>
-			<h4 className='text-center my-[30px] text-[28px] font-semibold'>
+			<h4
+				className={`${
+					isDarkMode ? '#fff' : ''
+				} text-center my-[30px] text-[28px] font-semibold`}
+			>
 				Оплата
 			</h4>
 			<Form
@@ -80,7 +87,9 @@ const PaymentPage = () => {
 				name='payment'
 				onFinish={onFinish}
 				layout='vertical'
-				className='relative z-[10] bg-white px-[10px] py-[30px] rounded-[25px]'
+				className={`${
+					isDarkMode ? '#999999' : ''
+				} relative z-[10] bg-white px-[10px] py-[30px] rounded-[25px]`}
 			>
 				<Form.Item
 					name='name'

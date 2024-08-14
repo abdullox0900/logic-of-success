@@ -1,27 +1,28 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react'
 
-const TelegramColorSchemeContext = createContext();
+const TelegramColorSchemeContext = createContext()
 
 export const TelegramColorSchemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(false)
 
-  useEffect(() => {
-    const tg = window.Telegram.WebApp;
+	useEffect(() => {
+		const tg = window.Telegram.WebApp
 
-    tg.ready();
+		tg.ready()
 
-    setIsDarkMode(tg.colorScheme === 'dark');
+		setIsDarkMode(tg.colorScheme === 'dark')
 
-    tg.onEvent('themeChanged', () => {
-      setIsDarkMode(tg.colorScheme === 'dark');
-    });
-  }, []);
+		tg.onEvent('themeChanged', () => {
+			setIsDarkMode(tg.colorScheme === 'dark')
+		})
+	}, [])
 
-  return (
-    <TelegramColorSchemeContext.Provider value={{ isDarkMode }}>
-      {children}
-    </TelegramColorSchemeContext.Provider>
-  );
-};
+	return (
+		<TelegramColorSchemeContext.Provider value={{ isDarkMode }}>
+			{children}
+		</TelegramColorSchemeContext.Provider>
+	)
+}
 
-export const useTelegramColorScheme = () => useContext(TelegramColorSchemeContext);
+export const useTelegramColorScheme = () =>
+	useContext(TelegramColorSchemeContext)
