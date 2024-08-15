@@ -121,12 +121,12 @@ const PaymentPage = () => {
 
 				<Form.Item
 					name='language'
-					label='Язык'
+					label='Предметы'
 					rules={[{ required: true, message: 'Пожалуйста, выберите язык!' }]}
 				>
 					<Select
 						className='h-[55px]'
-						placeholder='Предмет'
+						placeholder='Предметы'
 						prefix={<GlobalOutlined />}
 					>
 						<Option value='Русский язык'>Русский язык</Option>
