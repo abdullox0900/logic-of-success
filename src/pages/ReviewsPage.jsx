@@ -24,7 +24,9 @@ const ReviewCard = ({ review }) => {
 					>
 						{review.name}
 					</h3>
-					<p className='text-gray-600'>{review.grade}</p>
+					<p className={`${isDarkMode ? 'text-white' : 'text-gray-600'} `}>
+						{review.grade}
+					</p>
 					{review.subject && <p className='text-gray-600'>{review.subject}</p>}
 				</div>
 			</div>
@@ -58,7 +60,7 @@ const ReviewsPage = () => {
 				<h2
 					className={`${
 						isDarkMode ? 'text-white' : 'text-black'
-					} text-3xl font-extrabold text-center mb-12`}
+					} relative z-[10] text-3xl font-extrabold text-center mb-12`}
 				>
 					Отзывы наших учеников
 				</h2>
