@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useTelegramColorScheme } from '../context/TelegramColorSchemeContext'
 import { reviewsData } from '../data/reviewsData'
 
 const ReviewCard = ({ review }) => {
 	const { isDarkMode } = useTelegramColorScheme()
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const tg = window.Telegram.WebApp
