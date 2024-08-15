@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTelegramColorScheme } from '../context/TelegramColorSchemeContext'
 import { reviewsData } from '../data/reviewsData'
