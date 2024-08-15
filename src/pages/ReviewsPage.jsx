@@ -5,6 +5,20 @@ import { reviewsData } from '../data/reviewsData'
 const ReviewCard = ({ review }) => {
 	const { isDarkMode } = useTelegramColorScheme()
 
+	useEffect(() => {
+		const tg = window.Telegram.WebApp
+
+		tg.BackButton.show()
+
+		tg.BackButton.onClick(() => {
+			navigate(-1)
+		})
+
+		return () => {
+			tg.BackButton.hide()
+		}
+	}, [])
+
 	return (
 		<div
 			className={`${
