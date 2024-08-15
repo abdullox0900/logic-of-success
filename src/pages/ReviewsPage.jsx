@@ -24,13 +24,19 @@ const ReviewCard = ({ review }) => {
 					>
 						{review.name}
 					</h3>
-					<p className={`${isDarkMode ? 'text-white' : 'text-gray-600'} `}>
+					<p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} `}>
 						{review.grade}
 					</p>
-					{review.subject && <p className='text-gray-600'>{review.subject}</p>}
+					{review.subject && (
+						<p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} `}>
+							{review.subject}
+						</p>
+					)}
 				</div>
 			</div>
-			<p className='text-gray-700'>{review.text}</p>
+			<p className={`${isDarkMode ? 'text-white' : 'text-gray-600'} `}>
+				{review.text}
+			</p>
 		</div>
 	)
 }
