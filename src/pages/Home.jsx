@@ -4,7 +4,6 @@ import ImgIsometric from '../assets/img/isometric.png'
 import ImgWorking from '../assets/img/working.png'
 import Container from '../components/Container/Container'
 // import Footer from '../components/Footer/Footer'
-import { Header } from '../components/Header/Header'
 import { useTelegramColorScheme } from '../context/TelegramColorSchemeContext'
 
 const Home = () => {
@@ -12,7 +11,6 @@ const Home = () => {
 
 	return (
 		<div>
-			<Header />
 			<Container>
 				<h1
 					className={`${
@@ -40,7 +38,7 @@ const Home = () => {
 							/>
 						</NavLink>
 						<NavLink
-							to='/tariffs'
+							to='/reviews'
 							className={`${
 								isDarkMode ? 'bg-[#1c1c1e] text-white' : 'bg-white text-black'
 							} flex items-center relative overflow-hidden p-[20px] w-full h-[100px] text-[18px] rounded-[15px]`}

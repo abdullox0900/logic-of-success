@@ -126,7 +126,7 @@ const PaymentPage = () => {
 				>
 					<Select
 						className='h-[55px]'
-						placeholder='Выберите язык'
+						placeholder='Предмет'
 						prefix={<GlobalOutlined />}
 					>
 						<Option value='Русский язык'>Русский язык</Option>
@@ -161,6 +161,12 @@ const PaymentPage = () => {
 						<Option value='ОГЭ-Эффективный'>ОГЭ-Эффективный</Option>
 						<Option value='ЕГЭ-Интенсив'>ЕГЭ-Интенсив</Option>
 						<Option value='VIP тариф'>VIP тариф</Option>
+						<Option value='Стабильность'>Стабильность</Option>
+						<Option value='Развитие'>Развитие</Option>
+						<Option value='Максимум возможностей'>Максимум возможностей</Option>
+						<Option value='Первые шаги'>Первые шаги</Option>
+						<Option value='Уверенный прогресс'>Уверенный прогресс</Option>
+						<Option value='Полный вперед'>Полный вперед</Option>
 					</Select>
 				</Form.Item>
 

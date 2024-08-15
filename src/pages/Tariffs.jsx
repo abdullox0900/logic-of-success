@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import CourseCard from '../components/CourseCard/CourseCard'
+import { coursesData } from '../data/courses'
 
 const Tariffs = () => {
 	const navigate = useNavigate()
@@ -19,14 +21,12 @@ const Tariffs = () => {
 	}, [])
 
 	return (
-		<div className='h-screen flex flex-col justify-center items-center relative z-10'>
-			<div className='text-[25px] mb-[20px]'>В скором времени</div>
-			<NavLink
-				to={'/'}
-				className={'text-[16px] p-[10px] bg-white rounded-[15px]'}
-			>
-				Home
-			</NavLink>
+		<div className='flex flex-col justify-center items-center relative z-[5]'>
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6'>
+				{coursesData.map(course => (
+					<CourseCard key={course.id} course={course} />
+				))}
+			</div>
 		</div>
 	)
 }
